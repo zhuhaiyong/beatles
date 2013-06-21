@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="com.ruoogle"
+		module="Beatles"
+		revision="1.0-SNAPSHOT"
+		status="integration"
+		publication="20130621132520"
+	/>
+	<configurations>
+		<conf name="archives" visibility="public" description="Configuration for archive artifacts."/>
+		<conf name="compile" visibility="private" description="Classpath for compiling the main sources."/>
+		<conf name="default" visibility="public" description="Configuration for default artifacts." extends="runtime"/>
+		<conf name="runtime" visibility="private" description="Classpath for running the compiled main classes." extends="compile"/>
+		<conf name="testCompile" visibility="private" description="Classpath for compiling the test sources." extends="compile"/>
+		<conf name="testRuntime" visibility="private" description="Classpath for running the compiled test classes." extends="runtime,testCompile"/>
+	</configurations>
+	<publications>
+		<artifact name="Beatles" type="jar" ext="jar" conf="archives,runtime"/>
+		<artifact name="Beatles" type="jar" ext="jar" conf="archives" m:classifier="sources"/>
+	</publications>
+	<dependencies>
+		<dependency org="" name="hadoop-core" rev="1.2.0" conf="compile->default"/>
+		<dependency org="" name="httpcore-nio" rev="4.2.4" conf="compile->default"/>
+		<dependency org="" name="jcommon" rev="1.0.17" conf="compile->default"/>
+		<dependency org="" name="jetty" rev="7.0.0.pre5" conf="compile->default"/>
+		<dependency org="" name="jetty-util" rev="7.0.0.pre5" conf="compile->default"/>
+		<dependency org="" name="jfreechart" rev="1.0.14" conf="compile->default"/>
+		<dependency org="" name="netty" rev="3.6.6.Final" conf="compile->default"/>
+		<dependency org="" name="velocity" rev="1.7" conf="compile->default"/>
+		<dependency org="" name="zookeeper" rev="3.4.5" conf="compile->default"/>
+		<dependency org="commons-httpclient" name="commons-httpclient" rev="3.1" conf="compile->default"/>
+		<dependency org="commons-codec" name="commons-codec" rev="1.6" conf="compile->default"/>
+		<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="compile->default"/>
+		<dependency org="commons-logging" name="commons-logging" rev="1.1.1" conf="compile->default"/>
+		<dependency org="commons-collections" name="commons-collections" rev="20040616" conf="compile->default"/>
+		<dependency org="commons-dbutils" name="commons-dbutils" rev="1.5" conf="compile->default"/>
+		<dependency org="commons-beanutils" name="commons-beanutils" rev="20030211.134440" conf="compile->default"/>
+		<dependency org="org.codehaus.fabric3.api" name="javax-annotation" rev="1.0.1" conf="compile->default"/>
+		<dependency org="commons-pool" name="commons-pool" rev="1.5.5" conf="compile->default"/>
+		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.2.2" conf="compile->default"/>
+		<dependency org="org.apache.httpcomponents" name="httpclient-cache" rev="4.2.2" conf="compile->default"/>
+		<dependency org="org.apache.httpcomponents" name="fluent-hc" rev="4.2.2" conf="compile->default"/>
+		<dependency org="org.apache.httpcomponents" name="httpmime" rev="4.2.2" conf="compile->default"/>
+		<dependency org="org.apache.httpcomponents" name="httpcore" rev="4.2.2" conf="compile->default"/>
+		<dependency org="dom4j" name="dom4j" rev="1.6.1" conf="compile->default"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="compile->default"/>
+		<dependency org="log4j" name="log4j" rev="1.2.16" conf="compile->default"/>
+		<dependency org="javax.servlet" name="javax.servlet-api" rev="3.1-b07" conf="compile->default"/>
+	</dependencies>
+</ivy-module>
