@@ -1,0 +1,101 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility=1.6
+targetCompatibility=1.6
+
+version = '1.0-SNAPSHOT'
+group = 'com.ruoogle'
+jar {
+    manifest.attributes['Implementation-Title'] = 'Beatles'
+    manifest.attributes['Implementation-Version'] = version
+    baseName='Beatles'
+}
+
+tasks.withType(Compile) { 
+    options.encoding = "UTF-8"
+}
+
+repositories {
+		flatDir { dirs "lib" }
+		maven { url "http://repo.springsource.org/release"}
+        maven { url "http://172.16.10.207:8080/content/groups/public/" }
+        mavenCentral()
+}
+
+dependencies {
+	compile ':hadoop-core:1.2.0' //本地文件
+	compile ":httpcore-nio:4.2.4"
+	compile ":jcommon:1.0.17"
+	compile ":jetty:7.0.0.pre5"
+	compile ":jetty-util:7.0.0.pre5"
+	compile ":jfreechart:1.0.14"
+	compile ":netty:3.6.6.Final"
+	compile ":velocity:1.7"
+	compile ":zookeeper:3.4.5"
+
+
+    //commons
+    compile "commons-httpclient:commons-httpclient:3.1"
+    compile "commons-codec:commons-codec:1.6"
+    compile "commons-lang:commons-lang:2.6"
+    compile "commons-logging:commons-logging:1.1.1"
+    compile "commons-collections:commons-collections:20040616"
+    compile "commons-dbutils:commons-dbutils:1.5"
+    compile "commons-beanutils:commons-beanutils:20030211.134440"
+    //compile 'commons-io:commons-io:20030203.000550'
+    compile 'org.codehaus.fabric3.api:javax-annotation:1.0.1'
+    compile "commons-pool:commons-pool:1.5.5"
+    
+    //http
+    compile 'org.apache.httpcomponents:httpclient:4.2.2'
+    compile 'org.apache.httpcomponents:httpclient-cache:4.2.2'
+    compile 'org.apache.httpcomponents:fluent-hc:4.2.2'
+    compile 'org.apache.httpcomponents:httpmime:4.2.2'
+    compile 'org.apache.httpcomponents:httpcore:4.2.2'
+            
+    //dom4j
+    compile "dom4j:dom4j:1.6.1"
+    
+	//junit
+    compile "junit:junit:4.10"
+    
+    //log4j
+    compile "log4j:log4j:1.2.16"
+            
+    compile "javax.servlet:javax.servlet-api:3.1-b07"
+}
+
+
+javadoc {
+    options.encoding = "UTF-8"
+}
+task packageJavadoc(type: Jar, dependsOn: 'javadoc') {
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+task packageSources(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+artifacts {
+    //archives packageJavadoc {
+    //    type = 'javadoc'
+    //}
+    archives packageSources {
+        type = 'sources'
+    }
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs '/home/zhy/workspace/Beatles/lib'
+       }
+    }
+    //repositories.mavenDeployer {
+    //        repository(url: "http://172.16.10.207:8080/content/repositories/snapshots") {
+    //            authentication(userName: "dev", password: "Welcome1")
+    //        }
+    //    }
+}

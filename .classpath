@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resource"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/netty-3.6.6.Final.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/netty-3.6.6.Final-sources.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpclient-4.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpclient-4.2.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpclient-cache-4.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpcore-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpmime-4.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/nova/httpmime-4.2.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/velocity-1.7.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/zookeeper-3.4.5.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/httpcore-nio-4.2.4.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/hadoop-core-1.2.0.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/thirdparty/commons-codec.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/Downloads/jfreechart-1.0.14.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/Downloads/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/Downloads/jetty-7.0.0.pre5.jar"/>
+	<classpathentry kind="lib" path="/home/zhy/Downloads/jetty-util-7.0.0.pre5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
